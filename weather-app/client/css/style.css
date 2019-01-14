@@ -1,0 +1,132 @@
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-family:'Roboto';
+  font-size: 16px;
+}
+
+.weather-form {
+  display: inline-block;
+}
+
+.spinner {
+  text-align: center;
+}
+
+.has-error input {
+  border: 1px solid red;
+}
+
+.has-error p {
+  color: red;
+}
+
+.has-success input{
+  border: 1px solid green;
+}
+
+.password-share-message {
+  font-size: 11px;
+  color: #777;
+}
+
+.help-block {
+  color: red;
+}
+
+.city-details-container {
+  font-size: 18px;
+  color: #777777;
+}
+
+.city-details-container span:first-child {
+  font-size: 24px;
+  color: #000;
+}
+
+.logout {
+  color: #000;
+}
+
+.main-container {
+  padding: 0 20px;
+}
+
+.login-form {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.login-form h2 {
+  padding: 0 15px;
+  margin: 0;
+}
+
+.wind-image {
+  width: 10px;
+}
+
+.card {
+  font-size: 80%;
+  color: #777777;
+  padding-top: 10px;
+}
+
+.card .card-img-top {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.card h5 {
+  font-size: 15px;
+    font-weight: bold;
+    color: #000;
+
+} 
+
+/*main*/
+main section {
+  padding:1rem;
+}
+
+.form-horizontal {
+  max-width: 600px;
+  margin: auto;
+  border: 1px solid #eee;
+ 
+}
+
+.form-horizontal:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.form-heading {
+  background: #00B16A;
+  padding: 10px 15px;
+  
+}
+
+.form-heading h2 {
+  color: #fff;
+  margin: 0;
+}
+.form-group {
+  max-width: 100%;
+  margin: auto;
+  margin: 15px;
+
+}
+
+.form-group .form-control:focus {
+  box-shadow: none;
+}
+.btn {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}

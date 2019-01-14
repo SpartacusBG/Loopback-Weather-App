@@ -1,0 +1,33 @@
+<section>
+  <div class="login-form">
+    <h2>Login / Register</h2>
+    <form name="form" ng-submit="form.$valid && login()">
+      <div class="form-group" ng-class="{true: 'has-error'}[submitted && form.email.$invalid]">
+        <label for="exampleInputEmail1">Email address*</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" required ng-model="user.email"
+          placeholder="Enter email">
+        <p class="help-inline" ng-show="form.email.$error.required && submitted">Email is Required</p>
+        <p class="help-inline" ng-show="submitted && form.email.$error.email">Invalid email</p>
+        <span class="password-share-message">We'll never share your password with anyone else.</span>
+      </div>
+      <div class="form-group" ng-class="{true: 'has-error'}[submitted && form.password.$invalid]">
+        <label for="exampleInputPassword1">Password*</label>
+        <input type="password" class="form-control" name="password" id="exampleInputPassword1" required ng-model="user.password"
+          placeholder="Password">
+        <p class="hint" ng-show="form.password.$error.required && submitted">
+          Password is required</p>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-secondary" type="button" ui-sref="sign-up" name="showpassword" id="showpassword" value="Show Password">Create
+          Account</button>
+        <button type="submit" class="btn btn-primary" ng-click="submitted=true">Login</button>
+      </div>
+
+    </form>
+
+    <div class="help-block" ng-show="showErrorMessage">
+      Wrong Email or Password
+    </div>
+
+  </div>
+</section>

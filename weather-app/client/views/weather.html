@@ -1,0 +1,65 @@
+<header>
+    <div class="main-container clearfix">
+        <nav class="navbar navbar-light bg-light">
+            <div class="float-left">
+                <a class=" navbar-brand" href="#">MetaWeather</a>
+                <form class="weather-form  form-inline" ng-submit="getCityInformation()">
+                    <input class="form-control mr-sm-2" type="search" ng-model="searchValue" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" ng-disabled="!searchValue" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="float-right">
+                <span ng-show="currentUser">
+                    <a class="logout" ui-sref="logout" ui-sref-active="active">Logout</a>
+                </span>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+<section>
+    <div class="main-container">
+        <div class="spinner" ng-show="loading">
+            <img src="http://i49.tinypic.com/j5z8mb.gif" alt="Yükleniyor..." />
+        </div>
+        <div ng-show="showError">Something went wrong!</div>
+        <div ng-show="showNoResultsMessage">No Results found!</div>
+        <div ng-show="!loading">
+
+            <p class="city-details-container">
+                <span>{{ city }}</span>
+                <span>{{ country }}</span>
+            </p>
+
+            <div class="row">
+                <div class="col-md-2" ng-repeat="weather in weeklyWeather">
+                    <div class="card">
+                        <img class="card-img-top" src="https://www.metaweather.com/static/img/weather/png/{{weather.weather_state_abbr}}.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ findCurentDay(weather.applicable_date) }} 
+                                {{ weather.weather_state_name }} 
+                                {{ trimAfterTheDot(weather.the_temp)}} &#x2103;
+                            </h5>
+                            <p>
+                                <span>{{ trimAfterTheDot(weather.min_temp) }} &#x2103;</span> / 
+                                <span>{{ trimAfterTheDot(weather.max_temp) }} &#x2103;</span>
+                            </p>
+                            <p>Humidity {{ weather.humidity }} %</p>
+                            <p>Visibility {{ trimAfterTheDot(weather.visibility) }}</p>
+                            <p>
+                                <img class="wind-image" src="../images/wind.svg" alt="">
+                                {{ weather.wind_direction_compass }} {{ trimAfterTheDot(weather.wind_speed) }} km/h
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
