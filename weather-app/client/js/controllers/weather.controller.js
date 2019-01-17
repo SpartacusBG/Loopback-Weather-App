@@ -11,6 +11,7 @@ angular
             $scope.getCityInformation = getCityInformation;
             $scope.findCurentDay = findCurentDay;
             $scope.trimAfterTheDot = trimAfterTheDot;
+            $scope.convertMilesToKilometers = convertMilesToKilometers;
             $scope.showError = false;
             $scope.showNoResultsMessage = false;
 
@@ -52,6 +53,10 @@ angular
                 $scope.loading = false;
                 $scope.showNoResultsMessage = false;
                 clearCurrentResults();
+            }
+
+            function convertMilesToKilometers(miles) {
+                return miles * 1.6;
             }
 
             function fetchForecast(weid) {

@@ -1,5 +1,5 @@
 <header>
-    <div class="main-container clearfix">
+    <div class="clearfix">
         <nav class="navbar navbar-light bg-light">
             <div class="float-left">
                 <a class=" navbar-brand" href="#">MetaWeather</a>
@@ -20,7 +20,7 @@
 </header>
 
 <section>
-    <div class="main-container">
+    <div>
         <div class="spinner" ng-show="loading">
             <img src="http://i49.tinypic.com/j5z8mb.gif" alt="Yükleniyor..." />
         </div>
@@ -52,7 +52,7 @@
                             <p>Visibility {{ trimAfterTheDot(weather.visibility) }}</p>
                             <p>
                                 <img class="wind-image" src="../images/wind.svg" alt="">
-                                {{ weather.wind_direction_compass }} {{ trimAfterTheDot(weather.wind_speed) }} km/h
+                                {{ weather.wind_direction_compass }} {{ trimAfterTheDot(convertMilesToKilometers(weather.wind_speed)) }} km/h
                             </p>
                         </div>
                     </div>

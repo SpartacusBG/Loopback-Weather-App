@@ -38,7 +38,8 @@ angular
       .state('weather', {
         url: '/weather',
         templateUrl: 'views/weather.html',
-        controller: 'WeatherController'
+        controller: 'WeatherController',
+        authenticate: true
 
       });
     $urlRouterProvider.otherwise('login');
